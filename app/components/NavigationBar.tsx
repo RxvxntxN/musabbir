@@ -2,16 +2,15 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Your exact code with minimal TypeScript
-export default function NavigationBar() {
-  const [open, setOpen] = useState(false); // TypeScript infers boolean
 
-  const menuItems = [ // TypeScript infers {label: string, href: string}[]
-    { label: "Solutions", href: "#" },
-    { label: "Cases", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Resources", href: "#" },
-    { label: "Company", href: "#" },
+export default function NavigationBar() {
+  const [open, setOpen] = useState(false); 
+
+  const menuItems = [ 
+    { label: "Projects", href: "#" },
+    { label: "Skills", href: "#" },
+    { label: "About", href: "#" },
+    { label: "Hire Me", href: "#" },
   ];
 
   return (
@@ -19,7 +18,7 @@ export default function NavigationBar() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo / Brand */}
         <Link href="#" className="font-bold text-lg">
-          Car Garages
+          My Portfolio
         </Link>
 
         {/* Desktop Menu */}
