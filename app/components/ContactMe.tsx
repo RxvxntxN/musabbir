@@ -15,10 +15,12 @@ const ContactPage = () => {
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text).then(() => {
-      // Use 'toast' function, not 'Toaster.success'
       toast.success(`${type} copied to clipboard!`, {
         position: "bottom-right",
         description: text,
+        style: {
+        color: "#2dd4bf",
+      },
       });
     });
   };
@@ -29,7 +31,7 @@ const ContactPage = () => {
       
       <div
         id="contact"
-        className="bg-stone-800 min-h-screen flex items-center justify-center text-white p-6"
+        className="bg-white min-h-screen flex items-center justify-center text-white p-6"
       >
         <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
           <div className="mb-4">
@@ -43,55 +45,55 @@ const ContactPage = () => {
           </div>
 
           <h1 className="text-5xl font-extrabold mb-4 text-center">
-            <span className="text-white">Contact</span>{' '}
+            <span className="text-gray-700">Contact</span>{' '}
             <span className="text-teal-400">Me</span>
           </h1>
 
-          <p className="text-lg leading-relaxed text-center mb-6 text-gray-300 max-w-xl">
+          <p className="text-lg leading-relaxed text-center mb-6 text-gray-700 max-w-xl">
             Feel free to reach out. I&apos;m always excited to connect and discuss
             new opportunities.
           </p>
 
           <div className="flex flex-col space-y-6 w-full max-w-md">
-            <div className="flex items-center space-x-4 bg-stone-800 p-3 rounded-lg">
+            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
               <MdEmail className="text-red-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-400">Email</p>
-                <p className="font-semibold">{contactInfo.email}</p>
+                <p className="text-sm text-gray-700">Email</p>
+                <p className="font-semibold text-gray-700">{contactInfo.email}</p>
               </div>
               <button
                 onClick={() => copyToClipboard(contactInfo.email, "Email")}
-                className="text-teal-400 hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
               >
                 Copy
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 bg-stone-800 p-3 rounded-lg">
+            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
               <BsPhone className="text-green-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-400">Phone</p>
-                <p className="font-semibold">{contactInfo.phone}</p>
+                <p className="text-sm text-gray-700">Phone</p>
+                <p className="font-semibold text-gray-700">{contactInfo.phone}</p>
               </div>
               <button
                 onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
-                className="text-teal-400 hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
               >
                 Copy
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 bg-stone-800 p-3 rounded-lg">
+            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
               <FaLinkedin className="text-blue-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-400">LinkedIn</p>
-                <p className="font-semibold text-white">Muhammad Musabbir</p>
+                <p className="text-sm text-gray-700">LinkedIn</p>
+                <p className="font-semibold text-gray-700">Muhammad Musabbir</p>
               </div>
               <a
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-400 hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
               >
                 Connect
               </a>
