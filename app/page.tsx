@@ -1,6 +1,7 @@
 import HeroPage from '@/app/components/HeroPage'
 import NavigationBar from '@/app/components/NavigationBar'
 import AboutMe from '@/app/components/AboutMe'
+import ContactMe from '@/app/components/ContactMe'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <NavigationBar />
         <HeroPage />
         <AboutMe />
+        <ContactMe />
       </main>
     </div>
   );
