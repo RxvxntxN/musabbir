@@ -7,7 +7,7 @@ export default function NavigationBar() {
   const [open, setOpen] = useState(false); 
 
   const menuItems = [ 
-    { label: "Projects", href: "#" },
+    { label: "Projects", href: "/projects" },
     { label: "Skills", href: "#" },
     { label: "About", href: "#" },
     { label: "Hire Me", href: "#" },
