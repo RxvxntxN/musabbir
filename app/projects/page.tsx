@@ -1,15 +1,16 @@
-// app/components/ProjectGrid.tsx
-import { PlayCircle, ExternalLink} from "lucide-react";
+import { ExternalLink} from "lucide-react";
 import { FiGithub } from "react-icons/fi";
+import NavigationBar from '@/app/components/NavigationBar'
+import spfCheckerImage from '@/app/images/spfchecker.png';
+import { StaticImageData } from 'next/image';
+import Image from "next/image";
 
 interface ProjectCard {
   id: string;
   title: string;
   description: string;
-  thumbnail: string;
+  thumbnail: string | StaticImageData;
   tags: string[];
-  views?: string;
-  date?: string;
   liveUrl?: string;
   githubUrl?: string;
 }
@@ -17,53 +18,49 @@ interface ProjectCard {
 const projects: ProjectCard[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce with Next.js and Stripe",
-    thumbnail: "/projects/ecommerce.jpg",
-    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
-    views: "1.2k views",
-    date: "2 months ago",
-    liveUrl: "https://demo.com",
-    githubUrl: "https://github.com/yourrepo",
+    title: "Coffee Shop",
+    description: "Coffee shop with redux and nightmode feature",
+    thumbnail: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    tags: ["Next.js", "Redux", "React", "Tailwind CSS"],
+    liveUrl: "https://coffee-shop-gray-eight.vercel.app/",
+    githubUrl: "https://github.com/RxvxntxN/coffee-shop",
   },
   {
     id: "2",
-    title: "Task Management App",
-    description: "Real-time collaborative task management",
-    thumbnail: "/projects/taskapp.jpg",
-    tags: ["React", "Firebase", "Tailwind", "Zustand"],
-    views: "800 views",
-    date: "1 month ago",
-    liveUrl: "https://tasks.demo.com",
-    githubUrl: "https://github.com/yourrepo/tasks",
+    title: "SPF Checker",
+    description: "A simple SPF record checker built with Next.js and Tailwind CSS.",
+    thumbnail: spfCheckerImage,
+    tags: ["Next.js", "Google DNS", "Tailwind CSS", "JavaScript"],
+    liveUrl: "https://simple-spf-checker.vercel.app/",
+    githubUrl: "https://github.com/RxvxntxN/simple_spf_checker",
   },
-  // More project objects can be added here
+  {
+    id: "3",
+    title: "SPF Checker",
+    description: "A simple SPF record checker built with Next.js and Tailwind CSS.",
+    thumbnail: spfCheckerImage,
+    tags: ["Next.js", "Google DNS", "Tailwind CSS", "JavaScript"],
+    liveUrl: "https://simple-spf-checker.vercel.app/",
+    githubUrl: "https://github.com/RxvxntxN/simple_spf_checker",
+  },
 ];
 
 export default function ProjectGrid() {
   return (
+    <>
+    <NavigationBar />
     <div className="p-4 md:p-6">
-      
-      <div className="flex gap-2 mb-6 flex-wrap">
-        <button className="px-4 py-2 bg-black text-white rounded-full">All</button>
-        <button className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">Web Dev</button>
-        <button className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">Mobile</button>
-        <button className="px-4 py-2 bg-gray-100 rounded-full hover:bg-gray-200">Design</button>
-      </div>
-
-      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {projects.map((project) => (
           <div key={project.id} className="group cursor-pointer">
-           
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-200 mb-3">
-              
-              <div className="w-full h-full bg-linear-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                <PlayCircle className="w-16 h-16 text-gray-400 group-hover:scale-110 transition-transform" />
-              </div>
-              
-              
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-200 flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <div className="relative aspect-video rounded-xl overflow-hidden mb-3">
+              <Image 
+                  src={project.thumbnail} 
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-all duration-200 group-hover:blur-sm"
+                />
+              <div className="absolute inset-0 transition-colors duration-200 flex items-center justify-center opacity-0 group-hover:opacity-50">
                 <div className="flex gap-4">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" 
                      className="p-3 bg-white rounded-full hover:bg-gray-100">
@@ -92,17 +89,12 @@ export default function ProjectGrid() {
                   </span>
                 ))}
               </div>
-              
-              {/* Stats */}
-              <div className="flex items-center text-sm text-gray-500 mt-2">
-                <span>{project.views}</span>
-                <span className="mx-2">•</span>
-                <span>{project.date}</span>
-              </div>
             </div>
           </div>
         ))}
       </div>
     </div>
+    </>
+    
   );
 }
