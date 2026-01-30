@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import Musabbir from '@/app/images/musabbir.png';
 import { FaReact } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
-import { RiTailwindCssFill } from "react-icons/ri";
 import { IconType } from 'react-icons';
 
-// Define TypeScript interfaces
 type Skill = {
   icon: IconType;
   label: string;
@@ -19,35 +17,30 @@ interface UserData {
 }
 
 const CardDesign: React.FC = () => {
-  // Type the userData object
+
   const userData: UserData = {
     name: 'Muhammad Musabbir',
-    labels: [
-      'React.js',
-      'Next.js',
-      'JavaScript',
-      'Tailwind CSS',
-    ],
+    labels: ['React.js', 'Next.js', 'JavaScript', 'Tailwind CSS'],
   };
 
-  // Type the skills array
   const skills: Skill[] = [
     { icon: FaReact, label: userData.labels[0], color: 'text-cyan-400' },
-    { icon: RiNextjsFill, label: userData.labels[1], color: 'text-white' },
+    { icon: RiNextjsFill, label: userData.labels[1], color: 'text-black' },
     { icon: IoLogoJavascript, label: userData.labels[2], color: 'text-yellow-400' },
     { icon: RiTailwindCssFill, label: userData.labels[3], color: 'text-cyan-500' },
   ];
 
   return (
-    <div className="bg-stone-700 text-[#E0E0E0] p-6 rounded-xl shadow-2xl max-w-sm mx-auto transition-all duration-300 hover:scale-105">
+    <div className="bg-white w-md p-6 rounded-xl shadow-xl max-w-lg mx-auto transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="relative">
           <Image
             src={Musabbir}
-            alt="RxvxntxN"
+            alt="Muhammad Musabbir"
             width={136}
             height={136}
-            className="object-cover rounded-full border-4 border-teal-500 shadow-lg transition-transform duration-300 hover:rotate-6"
+            className="object-cover rounded-full border-4 border-teal-500 shadow-lg transition-transform duration-300 hover:scale-105"
           />
           <div className="absolute bottom-0 right-0 bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-md">
             <svg
@@ -66,11 +59,11 @@ const CardDesign: React.FC = () => {
         </div>
 
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-teal-400 transition-colors duration-300 hover:text-teal-300">
+          <h2 className="text-2xl font-bold text-teal-500 transition-colors duration-300 hover:text-teal-600">
             {userData.name}
           </h2>
-          <p className="text-sm text-gray-200 font-bold tracking-wide">
-            Front End Developer
+          <p className="text-sm text-gray-700 font-semibold tracking-wide">
+            Frontend Developer
           </p>
         </div>
       </div>
@@ -79,15 +72,16 @@ const CardDesign: React.FC = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-stone-800 p-4 rounded-lg text-center flex flex-col items-center justify-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-stone-900"
+            className="bg-white p-4 rounded-lg text-center flex flex-col items-center justify-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-500 border border-gray-100 group"
           >
-            <skill.icon className={`skill-icon text-2xl ${skill.color}`} />
-            <p className="font-semibold text-sm text-gray-200 hover:text-teal-400 transition-colors">
+            <skill.icon className={`text-2xl ${skill.color} group-hover:text-white transition-colors`} />
+            <p className="font-semibold text-sm text-gray-800 group-hover:text-white transition-colors">
               {skill.label}
             </p>
           </div>
         ))}
       </div>
+
     </div>
   );
 };

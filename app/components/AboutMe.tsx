@@ -15,8 +15,8 @@ export default function AboutMe() {
 
 
     return (        
-    <div className=" min-h-fit flex flex-col justify-center items-center p-8">
-        <div className="max-w-3xl w-full p-6 rounded-lg shadow-lg bg-opacity-80">
+    <div className="min-h-fit flex flex-col p-1 justify-center items-center">
+        <div className="max-w-4xl w-full p-6 rounded-lg shadow-lg bg-opacity-80">
                 <h1 className="text-4xl font-bold mb-4 flex items-center hover:text-teal-500">
                   About Me
                 </h1>

@@ -28,7 +28,7 @@ const projects: ProjectCard[] = [
   {
     id: "2",
     title: "SPF Checker",
-    description: "A simple SPF record checker built with Next.js and Tailwind CSS.",
+    description: "A simple SPF record checker built with Next.js and Google DNS",
     thumbnail: spfCheckerImage,
     tags: ["Next.js", "Google DNS", "Tailwind CSS", "JavaScript"],
     liveUrl: "https://simple-spf-checker.vercel.app/",
@@ -36,12 +36,12 @@ const projects: ProjectCard[] = [
   },
   {
     id: "3",
-    title: "SPF Checker",
-    description: "A simple SPF record checker built with Next.js and Tailwind CSS.",
-    thumbnail: spfCheckerImage,
-    tags: ["Next.js", "Google DNS", "Tailwind CSS", "JavaScript"],
-    liveUrl: "https://simple-spf-checker.vercel.app/",
-    githubUrl: "https://github.com/RxvxntxN/simple_spf_checker",
+    title: "Car Garage",
+    description: "A simple car garage app built with Next.js with Swipper.",
+    thumbnail: "https://images.unsplash.com/photo-1617814086906-d847a8bc6fca",
+    tags: ["Next.js", "Swipper.js", "Tailwind CSS", "JavaScript"],
+    liveUrl: "https://interesting-business-app.vercel.app/",
+    githubUrl: "https://github.com/RxvxntxN/interesting-business-app",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ProjectGrid() {
 
             
             <div className="space-y-1">
-              <h3 className="font-semibold text-lg line-clamp-1 group-hover:text-teal-600">
+              <h3 className="font-bold text-lg line-clamp-1 group-hover:text-teal-600 ">
                 {project.title}
               </h3>
               <p className="text-sm text-gray-600 line-clamp-2">{project.description}</p>
