@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "./ModeToggle";
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,8 @@ export default function NavigationBar() {
   ];
 
   return (
-    <nav className="bg-amber-200 p-4 sticky top-0 z-50 backdrop-blur-md">
+    <nav className="bg-white pt-3 top-0 z-50 backdrop-blur-md flex flex-col md:flex-row items-center justify-center relative">
+       
       <div className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl">
 
         <Link
@@ -37,6 +39,7 @@ export default function NavigationBar() {
             </Link>
           ))}
         </div>
+        
 
         <button
           onClick={() => setOpen(!open)}
@@ -46,13 +49,15 @@ export default function NavigationBar() {
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
-
+      <div className="absolute pr-8 pt-2 right-4 hidden md:flex top-3">
+        <ModeToggle />
+      </div>
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
+        className={`md:hidden w-full mx-auto overflow-hidden transition-all duration-300 ${
           open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col gap-3 px-4 py-4 bg-teal-500 rounded-xl mt-2 shadow-lg text-white font-semibold">
+        <div className="flex flex-col gap-3 px-4 py-4 bg-teal-500 rounded-xl mt-2 shadow-lg text-white font-semibold w-full">
           {menuItems.map((item) => (
             <Link
               key={item.label}
