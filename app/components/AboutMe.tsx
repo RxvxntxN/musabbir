@@ -17,11 +17,11 @@ export default function AboutMe() {
     return (        
     <div className="min-h-fit flex flex-col p-1 justify-center items-center dark:bg-stone-900">
         <div className="max-w-4xl w-full p-6 rounded-lg shadow-lg bg-opacity-80">
-                <h1 className="text-4xl text-gray-700 font-bold mb-4 flex items-center hover:text-teal-500">
+                <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500 dark:hover:text-teal-500">
                   About Me
                 </h1>
                 <hr className="w-24 h-1 bg-teal-500 border-0 rounded md:my-5"></hr>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Hi, I&apos;m Muhammad Musabbir! I was born with{' '}
                 
                 <Tooltip>
@@ -45,10 +45,10 @@ export default function AboutMe() {
                   gaming, with a special interest in Apex Legends and Counter-Strike 2.
                 </p>
                 <div className="mt-6">
-                  <h2 className="text-2xl text-gray-700 font-semibold mb-2 hover:text-teal-500">
+                  <h2 className="text-2xl text-gray-700 font-semibold mb-2 hover:text-teal-500 dark:text-gray-300 dark:hover:text-teal-500">
                     Skills
                   </h2>
-                  <ul className="list-disc list-inside text-gray-700">
+                  <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
                     <li className="flex items-center gap-2 mb-2">
                       <SiFrontendmentor className="text-teal-500" />
                       <span>Frontend Development (React, Next.js)</span>

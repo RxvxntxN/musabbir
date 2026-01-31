@@ -49,7 +49,7 @@ export default function ProjectGrid() {
   return (
     <>
     <NavigationBar />
-    <div className="p-4 md:p-6">
+    <div className="p-4 md:p-6 bg-white dark:bg-stone-900 min-h-screen">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {projects.map((project) => (
           <div key={project.id} className="group cursor-pointer">
@@ -60,15 +60,15 @@ export default function ProjectGrid() {
                   fill
                   className="object-cover transition-all duration-200 group-hover:blur-sm"
                 />
-              <div className="absolute inset-0 transition-colors duration-200 flex items-center justify-center opacity-0 group-hover:opacity-50">
+              <div className="absolute inset-0 bg-black transition-colors duration-200 flex items-center justify-center opacity-0 group-hover:opacity-50">
                 <div className="flex gap-4">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" 
-                     className="p-3 bg-white rounded-full hover:bg-gray-100">
-                    <ExternalLink size={20} />
+                     className="p-3 bg-white dark:bg-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <ExternalLink size={20} className="text-gray-800 dark:text-gray-200" />
                   </a>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                     className="p-3 bg-white rounded-full hover:bg-gray-100">
-                    <FiGithub size={20} />
+                     className="p-3 bg-white dark:bg-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <FiGithub size={20} className="text-gray-800 dark:text-gray-200" />
                   </a>
                 </div>
               </div>
@@ -76,15 +76,15 @@ export default function ProjectGrid() {
 
             
             <div className="space-y-1">
-              <h3 className="font-bold text-lg line-clamp-1 group-hover:text-teal-600 ">
+              <h3 className="font-bold text-lg line-clamp-1 text-gray-900 dark:text-gray-300 group-hover:text-teal-600 dark:group-hover:text-teal-400">
                 {project.title}
               </h3>
-              <p className="text-sm text-gray-600 line-clamp-2">{project.description}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{project.description}</p>
               
               {/* Tags */}
               <div className="flex gap-2 mt-2 flex-wrap">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="text-xs px-2 py-1 bg-gray-100 rounded">
+                  <span key={tag} className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded">
                     {tag}
                   </span>
                 ))}

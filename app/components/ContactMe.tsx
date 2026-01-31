@@ -14,16 +14,23 @@ const ContactPage = () => {
   };
 
   const copyToClipboard = (text: string, type: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      toast.success(`${type} copied to clipboard!`, {
+  navigator.clipboard.writeText(text).then(() => {
+    // Painful Custom toast notification lmfao
+    toast.success(
+      <div>
+        <div className="text-teal-400 font-bold">
+          {type} copied to clipboard!
+        </div>
+        <div className="text-white text-sm mt-1">
+          {text}
+        </div>
+      </div>,
+      {
         position: "bottom-right",
-        description: text,
-        style: {
-        color: "#2dd4bf",
-      },
-      });
-    });
-  };
+      }
+    );
+  });
+};
 
   return (
     <>
@@ -31,7 +38,7 @@ const ContactPage = () => {
       
       <div
         id="contact"
-        className="bg-white min-h-screen flex items-center justify-center text-white p-6 dark:bg-stone-900"
+        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900"
       >
         <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
           <div className="mb-4">
@@ -45,11 +52,11 @@ const ContactPage = () => {
           </div>
 
           <h1 className="text-5xl font-extrabold mb-4 text-center">
-            <span className="text-gray-700">Contact</span>{' '}
+            <span className="text-gray-700 dark:text-gray-300">Contact</span>{' '}
             <span className="text-teal-400">Me</span>
           </h1>
 
-          <p className="text-lg leading-relaxed text-center mb-6 text-gray-700 max-w-xl">
+          <p className="text-lg leading-relaxed text-center mb-6 text-gray-700 dark:text-gray-300 max-w-xl">
             Feel free to reach out. I&apos;m always excited to connect and discuss
             new opportunities.
           </p>
@@ -63,7 +70,7 @@ const ContactPage = () => {
               </div>
               <button
                 onClick={() => copyToClipboard(contactInfo.email, "Email")}
-                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-gray-200"
               >
                 Copy
               </button>

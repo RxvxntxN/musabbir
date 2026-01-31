@@ -17,13 +17,16 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
-      // toastOptions={{
-      //    classNames: {
-      // title: "font-bold text-teal-400",
-      // description: "text-sm text-teal-400",
-      // success: "text-teal-400",
-      // },
-      // }}
+      
+      // Custom styles for Sonner toaster
+      toastOptions={{
+        classNames: {
+          title: "text-teal-400 font-bold",
+          description: "text-foreground text-sm",
+          toast: "bg-background border-border",
+        },
+      }}
+      
       icons={{
         success: <CircleCheckIcon className="size-4 text-teal-400" />,
         info: <InfoIcon className="size-4" />,
