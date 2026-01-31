@@ -21,7 +21,7 @@ const ContactPage = () => {
         <div className="text-teal-400 font-bold">
           {type} copied to clipboard!
         </div>
-        <div className="text-white text-sm mt-1">
+        <div className="text-gray-300 text-sm mt-1">
           {text}
         </div>
       </div>,
@@ -62,21 +62,21 @@ const ContactPage = () => {
           </p>
 
           <div className="flex flex-col space-y-6 w-full max-w-md">
-            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
               <MdEmail className="text-red-400 text-3xl" />
               <div className="grow">
                 <p className="text-sm text-gray-700">Email</p>
                 <p className="font-semibold text-gray-700">{contactInfo.email}</p>
               </div>
               <button
-                onClick={() => copyToClipboard(contactInfo.email, "Email")}
-                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-gray-200"
+                onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
+                className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
                 Copy
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
               <BsPhone className="text-green-400 text-3xl" />
               <div className="grow">
                 <p className="text-sm text-gray-700">Phone</p>
@@ -84,13 +84,13 @@ const ContactPage = () => {
               </div>
               <button
                 onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
-                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
                 Copy
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 bg-white shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
               <FaLinkedin className="text-blue-400 text-3xl" />
               <div className="grow">
                 <p className="text-sm text-gray-700">LinkedIn</p>
@@ -100,7 +100,7 @@ const ContactPage = () => {
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-400 font-bold hover:text-teal-300 transition-colors px-3 py-1 rounded-md hover:bg-teal-400/10"
+                className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
                 Connect
               </a>

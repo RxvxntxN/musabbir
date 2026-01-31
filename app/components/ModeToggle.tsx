@@ -14,7 +14,7 @@ export default function ModeToggle() {
   if (!mounted) return null
 
   return (
-    <div className="flex items-center gap-1 p-1 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800">
+    <div className="flex items-center gap-1 p-1 rounded-lg shadow-md bg-gray-100 dark:bg-stone-900">
       <Button
         variant={theme === "light" ? "default" : "ghost"}
         size="icon"

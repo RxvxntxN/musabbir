@@ -4,6 +4,7 @@ import NavigationBar from '@/app/components/NavigationBar'
 import spfCheckerImage from '@/app/images/spfchecker.png';
 import { StaticImageData } from 'next/image';
 import Image from "next/image";
+import atspage from '@/app/images/atslandingpage.png';
 
 interface ProjectCard {
   id: string;
@@ -42,6 +43,15 @@ const projects: ProjectCard[] = [
     tags: ["Next.js", "Swipper.js", "Tailwind CSS", "JavaScript"],
     liveUrl: "https://interesting-business-app.vercel.app/",
     githubUrl: "https://github.com/RxvxntxN/interesting-business-app",
+  },
+  {
+    id: "4",
+    title: "ATS Landing Page",
+    description: "A simple ATS built with Next.js with animations.",
+    thumbnail: atspage,
+    tags: ["Next.js", "Animation", "Tailwind CSS", "JavaScript"],
+    liveUrl: "https://basic-ultimate-ats.vercel.app/",
+    githubUrl: "https://github.com/RxvxntxN/Basic-ATS",
   },
 ];
 

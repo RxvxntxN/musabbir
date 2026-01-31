@@ -19,13 +19,13 @@ const Toaster = ({ ...props }: ToasterProps) => {
       className="toaster group"
       
       // Custom styles for Sonner toaster
-      toastOptions={{
-        classNames: {
-          title: "text-teal-400 font-bold",
-          description: "text-foreground text-sm",
-          toast: "bg-background border-border",
-        },
-      }}
+      // toastOptions={{
+      //   classNames: {
+      //     title: "text-teal-400 font-bold",
+      //     description: "text-foreground text-sm",
+      //     toast: "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700",
+      //   },
+      // }}
       
       icons={{
         success: <CircleCheckIcon className="size-4 text-teal-400" />,

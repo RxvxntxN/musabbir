@@ -53,7 +53,7 @@ const NavigationBar = () => {
         {/* Mobile Menu Button and Mode Toggle */}
         <div className="md:hidden flex items-center gap-2">
           {/* Mode Toggle for Mobile */}
-          <div className="text-white">
+          <div className="">
             <ModeToggle />
           </div>
           
