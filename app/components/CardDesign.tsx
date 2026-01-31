@@ -25,13 +25,13 @@ const CardDesign: React.FC = () => {
 
   const skills: Skill[] = [
     { icon: FaReact, label: userData.labels[0], color: 'text-cyan-400' },
-    { icon: RiNextjsFill, label: userData.labels[1], color: 'text-black' },
+    { icon: RiNextjsFill, label: userData.labels[1], color: 'text-gray-800 dark:text-gray-100' },
     { icon: IoLogoJavascript, label: userData.labels[2], color: 'text-yellow-400' },
     { icon: RiTailwindCssFill, label: userData.labels[3], color: 'text-cyan-500' },
   ];
 
   return (
-    <div className="bg-white w-md p-6 rounded-xl shadow-xl max-w-lg mx-auto transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+    <div className="bg-white w-md p-6 rounded-xl shadow-xl max-w-lg mx-auto transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-stone-900">
       
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="relative">
@@ -40,7 +40,7 @@ const CardDesign: React.FC = () => {
             alt="Muhammad Musabbir"
             width={136}
             height={136}
-            className="object-cover rounded-full border-4 border-teal-500 shadow-lg transition-transform duration-300 hover:scale-105"
+            className="object-cover rounded-full border-4 border-teal-500 shadow-lg transition-transform duration-300 hover:scale-105 "
           />
           <div className="absolute bottom-0 right-0 bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-md">
             <svg
@@ -62,7 +62,7 @@ const CardDesign: React.FC = () => {
           <h2 className="text-2xl font-bold text-teal-500 transition-colors duration-300 hover:text-teal-600">
             {userData.name}
           </h2>
-          <p className="text-sm text-gray-700 font-semibold tracking-wide">
+          <p className="text-sm text-gray-700 font-semibold tracking-wide dark:text-gray-300">
             Frontend Developer
           </p>
         </div>
@@ -72,10 +72,10 @@ const CardDesign: React.FC = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-white p-4 rounded-lg text-center flex flex-col items-center justify-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-500 border border-gray-100 group"
+            className="bg-white dark:bg-stone-900 p-4 rounded-lg text-center flex flex-col items-center justify-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-500 border border-gray-100 group"
           >
             <skill.icon className={`text-2xl ${skill.color} group-hover:text-white transition-colors`} />
-            <p className="font-semibold text-sm text-gray-800 group-hover:text-white transition-colors">
+            <p className="font-semibold text-sm text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors">
               {skill.label}
             </p>
           </div>

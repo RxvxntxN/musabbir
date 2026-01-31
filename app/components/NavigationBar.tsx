@@ -15,7 +15,7 @@ export default function NavigationBar() {
   ];
 
   return (
-    <nav className="bg-white pt-3 top-0 z-50 backdrop-blur-md flex flex-col md:flex-row items-center justify-center relative">
+    <nav className="bg-white dark:bg-stone-900 pt-3 top-0 z-50 backdrop-blur-md flex flex-col md:flex-row items-center justify-center relative">
        
       <div className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl">
 
@@ -48,10 +48,11 @@ export default function NavigationBar() {
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
-      </div>
-      <div className="absolute pr-8 pt-2 right-4 hidden md:flex top-3">
+        <div className="absolute pr-8 pt-2 right-4 hidden md:flex top-3">
         <ModeToggle />
       </div>
+      </div>
+      
       <div
         className={`md:hidden w-full mx-auto overflow-hidden transition-all duration-300 ${
           open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"

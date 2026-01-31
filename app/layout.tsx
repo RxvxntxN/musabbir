@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+});
 
 export const metadata: Metadata = {
   title: "Musabbir's Portfolio",
@@ -13,9 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className={montserrat.className}>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider
+        attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >{children}</ThemeProvider>
       </body>
     </html>
   );
