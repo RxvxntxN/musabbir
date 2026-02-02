@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const HeroPage = () => {
   return (
-    <div className="flex flex-col md:flex-row h-screen dark:bg-stone-900 ">
+    <div className="flex flex-col md:flex-row min-h-screen dark:bg-stone-900 ">
       <div className="flex-1 flex justify-center items-center p-4 md:pl-10 order-1 md:order-1">
         <div className=" md:space-y-6 text-center w-lg md:text-left">
           <h1 className=" text-4xl text-gray-700 md:text-6xl font-bold font-alegreya dark:text-gray-300">
@@ -18,7 +18,7 @@ const HeroPage = () => {
             Welcome to my portfolio.
           </p>
           <div className="pt-2">
-            <Link href={'/explore-more'}>
+            <Link href={'/projects'}>
               <button className="px-6 py-2 border-2 dark:text-gray-300 border-teal-500 text-black rounded-md hover:bg-teal-500 hover:text-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-opacity-50">
                 Explore More
               </button>

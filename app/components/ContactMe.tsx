@@ -38,7 +38,7 @@ const ContactPage = () => {
       
       <div
         id="contact"
-        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900"
+        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900 scroll-mt-28"
       >
         <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
           <div className="mb-4">
