@@ -33,12 +33,7 @@ const NavigationBar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-stone-900 backdrop-blur-md pt-3 flex flex-col md:flex-row items-center justify-center">
       <motion.div
-        className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative"
-        // You can add entrance animations to the nav bar itself here if you want
-        // initial={{ y: -100, opacity: 0 }}
-        // animate={{ y: 0, opacity: 1 }}
-        // transition={{ duration: 0.5 }}
-      >
+        className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative">
         <Link
           href="/"
           className="font-bold text-lg text-white tracking-wide hover:opacity-90 transition"

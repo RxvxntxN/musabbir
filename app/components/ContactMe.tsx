@@ -5,6 +5,8 @@ import { FaLinkedin } from "react-icons/fa";
 import Image from 'next/image';
 import { Toaster} from "../../components/ui/sonner";
 import { toast } from "sonner"; 
+import { Copy } from 'lucide-react';
+import { CircleUserRound } from 'lucide-react';
 
 const ContactPage = () => {
   const contactInfo = {
@@ -38,7 +40,7 @@ const ContactPage = () => {
       
       <div
         id="contact"
-        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900 scroll-mt-28"
+        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900"
       >
         <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
           <div className="mb-4">
@@ -62,39 +64,39 @@ const ContactPage = () => {
           </p>
 
           <div className="flex flex-col space-y-6 w-full max-w-md">
-            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-stone-800 shadow-lg p-3 rounded-lg">
               <MdEmail className="text-red-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-700">Email</p>
-                <p className="font-semibold text-gray-700">{contactInfo.email}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Email</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-200">{contactInfo.email}</p>
               </div>
               <button
-                onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
+                onClick={() => copyToClipboard(contactInfo.email, "Email")}
                 className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
-                Copy
+                <Copy className="w-5 h-5" strokeWidth={2} />
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-stone-800 shadow-lg p-3 rounded-lg">
               <BsPhone className="text-green-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-700">Phone</p>
-                <p className="font-semibold text-gray-700">{contactInfo.phone}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">Phone</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-200">{contactInfo.phone}</p>
               </div>
               <button
                 onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
                 className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
-                Copy
+                <Copy className="w-5 h-5" strokeWidth={2} />
               </button>
             </div>
 
-            <div className="flex items-center space-x-4 dark:bg-gray-200 shadow-lg p-3 rounded-lg">
+            <div className="flex items-center space-x-4 dark:bg-stone-800 shadow-lg p-3 rounded-lg">
               <FaLinkedin className="text-blue-400 text-3xl" />
               <div className="grow">
-                <p className="text-sm text-gray-700">LinkedIn</p>
-                <p className="font-semibold text-gray-700">Muhammad Musabbir</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">LinkedIn</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-200">Muhammad Musabbir</p>
               </div>
               <a
                 href={contactInfo.linkedin}
@@ -102,7 +104,7 @@ const ContactPage = () => {
                 rel="noopener noreferrer"
                 className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
-                Connect
+                <CircleUserRound className="w-5 h-5" strokeWidth={2} />
               </a>
             </div>
           </div>
