@@ -1,9 +1,10 @@
-"use client";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import ModeToggle from "./ModeToggle";
+'use client';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import ModeToggle from './ModeToggle';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface MenuItem {
   label: string;
@@ -12,28 +13,112 @@ interface MenuItem {
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
+  const scrollAttemptRef = useRef<NodeJS.Timeout | null>(null);
+
+  const pathname = usePathname();
+  const router = useRouter();
 
   const menuItems: MenuItem[] = [
-    { label: "Projects", href: "/projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "About", href: "#about" },
-    { label: "Hire Me", href: "#contact" },
+    { label: 'Projects', href: '/projects' },
+    { label: 'About', href: '#about' },
+    { label: 'Hire Me', href: '#contact' },
   ];
 
-  // This function handles the smooth scrolling using the native browser API
-  const handleScroll = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+  // Handle hash scrolling when landing on home page
+  useEffect(() => {
+    if (pathname === '/') {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetId = hash.substring(1);
+
+        // Clear any existing scroll attempt
+        if (scrollAttemptRef.current) {
+          clearInterval(scrollAttemptRef.current);
+        }
+
+        let attempts = 0;
+        const maxAttempts = 15;
+
+        scrollAttemptRef.current = setInterval(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            // Clear interval once element is found
+            if (scrollAttemptRef.current) {
+              clearInterval(scrollAttemptRef.current);
+            }
+
+            // Scroll to element with offset
+            const yOffset = -100;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          } else {
+            attempts++;
+            if (attempts >= maxAttempts) {
+              if (scrollAttemptRef.current) {
+                clearInterval(scrollAttemptRef.current);
+              }
+            }
+          }
+        }, 150);
+      }
     }
-    // Close mobile menu after clicking
+
+    // Cleanup on unmount
+    return () => {
+      if (scrollAttemptRef.current) {
+        clearInterval(scrollAttemptRef.current);
+      }
+    };
+  }, [pathname]);
+
+  const scrollToElement = (targetId: string) => {
+    // Clear any existing scroll attempt
+    if (scrollAttemptRef.current) {
+      clearInterval(scrollAttemptRef.current);
+    }
+
+    let attempts = 0;
+    const maxAttempts = 15;
+
+    scrollAttemptRef.current = setInterval(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Clear interval once element is found
+        if (scrollAttemptRef.current) {
+          clearInterval(scrollAttemptRef.current);
+        }
+
+        // Scroll to element with offset
+        const yOffset = -100;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+          if (scrollAttemptRef.current) {
+            clearInterval(scrollAttemptRef.current);
+          }
+        }
+      }
+    }, 150);
+  };
+
+  const handleScroll = (targetId: string) => {
+    // Close mobile menu immediately
     setOpen(false);
+
+    if (pathname !== '/') {
+      // Navigate to home page with hash
+      router.push(`/#${targetId}`);
+    } else {
+      // Already on home page, scroll with retry logic
+      scrollToElement(targetId);
+    }
   };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-stone-900 backdrop-blur-md pt-3 flex flex-col md:flex-row items-center justify-center">
-      <motion.div
-        className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative">
+      <motion.div className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative">
         <Link
           href="/"
           className="font-bold text-lg text-white tracking-wide hover:opacity-90 transition"
@@ -45,13 +130,12 @@ const NavigationBar = () => {
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-6 text-white font-semibold">
             {menuItems.map((item) => {
-              const isAnchorLink = item.href.startsWith("#");
+              const isAnchorLink = item.href.startsWith('#');
 
               return isAnchorLink ? (
                 <button
                   key={item.label}
                   onClick={() => handleScroll(item.href.substring(1))}
-                  // Styled to look exactly like a link
                   className="relative group cursor-pointer bg-transparent border-none text-white font-semibold p-0"
                 >
                   <span>{item.label}</span>
@@ -62,6 +146,7 @@ const NavigationBar = () => {
                   key={item.label}
                   href={item.href}
                   className="relative group"
+                  onClick={() => setOpen(false)}
                 >
                   <span>{item.label}</span>
                   <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
@@ -97,20 +182,20 @@ const NavigationBar = () => {
         {open && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="absolute top-full left-0 right-0 md:hidden bg-white/90 dark:bg-stone-800/90 backdrop-blur-sm rounded-xl mt-2 shadow-lg w-full mx-auto max-w-7xl overflow-hidden"
           >
             <div className="flex flex-col gap-3 px-4 py-4 text-gray-700 dark:text-gray-200 font-semibold">
               {menuItems.map((item) => {
-                const isAnchorLink = item.href.startsWith("#");
+                const isAnchorLink = item.href.startsWith('#');
 
                 return isAnchorLink ? (
                   <button
                     key={item.label}
                     onClick={() => handleScroll(item.href.substring(1))}
-                    className="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left w-full bg-transparent border-none"
+                    className="py-2 px-3 rounded hover:bg-gray-100 dark:hover:bg-stone-700 transition-colors text-left w-full bg-transparent border-none cursor-pointer"
                   >
                     {item.label}
                   </button>

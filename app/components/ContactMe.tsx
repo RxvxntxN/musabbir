@@ -1,10 +1,10 @@
-"use client";
-import { MdEmail } from "react-icons/md";
-import { BsPhone } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+'use client';
+import { MdEmail } from 'react-icons/md';
+import { BsPhone } from 'react-icons/bs';
+import { FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
-import { Toaster} from "../../components/ui/sonner";
-import { toast } from "sonner"; 
+import { Toaster } from '../../components/ui/sonner';
+import { toast } from 'sonner';
 import { Copy } from 'lucide-react';
 import { CircleUserRound } from 'lucide-react';
 
@@ -16,28 +16,24 @@ const ContactPage = () => {
   };
 
   const copyToClipboard = (text: string, type: string) => {
-  navigator.clipboard.writeText(text).then(() => {
-    // Painful Custom toast notification lmfao
-    toast.success(
-      <div>
-        <div className="text-teal-400 font-bold">
-          {type} copied to clipboard!
-        </div>
-        <div className="text-gray-300 text-sm mt-1">
-          {text}
-        </div>
-      </div>,
-      {
-        position: "bottom-right",
-      }
-    );
-  });
-};
+    navigator.clipboard.writeText(text).then(() => {
+      // Painful Custom toast notification lmfao
+      toast.success(
+        <div>
+          <div className="text-teal-400 font-bold">{type} copied to clipboard!</div>
+          <div className="text-gray-300 text-sm mt-1">{text}</div>
+        </div>,
+        {
+          position: 'bottom-right',
+        }
+      );
+    });
+  };
 
   return (
     <>
       <Toaster />
-      
+
       <div
         id="contact"
         className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900"
@@ -59,8 +55,8 @@ const ContactPage = () => {
           </h1>
 
           <p className="text-lg leading-relaxed text-center mb-6 text-gray-700 dark:text-gray-300 max-w-xl">
-            Feel free to reach out. I&apos;m always excited to connect and discuss
-            new opportunities.
+            Feel free to reach out. I&apos;m always excited to connect and discuss new
+            opportunities.
           </p>
 
           <div className="flex flex-col space-y-6 w-full max-w-md">
@@ -68,10 +64,12 @@ const ContactPage = () => {
               <MdEmail className="text-red-400 text-3xl" />
               <div className="grow">
                 <p className="text-sm text-gray-700 dark:text-gray-300">Email</p>
-                <p className="font-semibold text-gray-700 dark:text-gray-200">{contactInfo.email}</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-200">
+                  {contactInfo.email}
+                </p>
               </div>
               <button
-                onClick={() => copyToClipboard(contactInfo.email, "Email")}
+                onClick={() => copyToClipboard(contactInfo.email, 'Email')}
                 className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
                 <Copy className="w-5 h-5" strokeWidth={2} />
@@ -82,10 +80,12 @@ const ContactPage = () => {
               <BsPhone className="text-green-400 text-3xl" />
               <div className="grow">
                 <p className="text-sm text-gray-700 dark:text-gray-300">Phone</p>
-                <p className="font-semibold text-gray-700 dark:text-gray-200">{contactInfo.phone}</p>
+                <p className="font-semibold text-gray-700 dark:text-gray-200">
+                  {contactInfo.phone}
+                </p>
               </div>
               <button
-                onClick={() => copyToClipboard(contactInfo.phone, "Phone")}
+                onClick={() => copyToClipboard(contactInfo.phone, 'Phone')}
                 className="text-cyan-600 font-bold hover:text-cyan-400 transition-colors px-3 py-1 rounded-md"
               >
                 <Copy className="w-5 h-5" strokeWidth={2} />

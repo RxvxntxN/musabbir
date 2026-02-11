@@ -2,19 +2,17 @@ import { SiFrontendmentor } from 'react-icons/si';
 import { MdDesignServices } from 'react-icons/md';
 import { FaFileWaveform } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
 export default function AboutMe() {
   return (
     <TooltipProvider>
-      <div id='about' className="min-h-fit flex flex-col p-1 justify-center items-center dark:bg-stone-900 scroll-mt-28">
+      <div
+        id="about"
+        className="min-h-fit flex flex-col p-1 justify-center items-center dark:bg-stone-900 scroll-mt-28"
+      >
         <div className="max-w-4xl w-full p-6 rounded-lg shadow-lg bg-opacity-80">
           <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500 dark:hover:text-teal-500">
             About Me
@@ -26,14 +24,17 @@ export default function AboutMe() {
               <TooltipTrigger asChild>
                 <span>profound hearing loss</span>
               </TooltipTrigger>
-              <TooltipContent className='bg-white text-gray-700 shadow-lg dark:bg-grey-300'>
-                <p className='max-w-sm '>Profound hearing loss is a level of hearing impairment that makes it difficult to hear most everyday sounds, except for loud sounds.</p>
+              <TooltipContent className="bg-white text-gray-700 shadow-lg dark:bg-grey-300">
+                <p className="max-w-sm ">
+                  Profound hearing loss is a level of hearing impairment that makes it difficult to
+                  hear most everyday sounds, except for loud sounds.
+                </p>
               </TooltipContent>
             </Tooltip>
-            . I am passionate about web development, especially working with
-            frameworks like Next.js and React. I enjoy building beautiful,
-            functional, and responsive web applications. Outside of coding, I love
-            gaming, with a special interest in Apex Legends and Counter-Strike 2.
+            . I am passionate about web development, especially working with frameworks like Next.js
+            and React. I enjoy building beautiful, functional, and responsive web applications.
+            Outside of coding, I love gaming, with a special interest in Apex Legends and
+            Counter-Strike 2.
           </p>
           <div className="mt-6">
             <h2 className="text-2xl text-gray-700 font-semibold mb-2 hover:text-teal-500 dark:text-gray-300 dark:hover:text-teal-500">
@@ -59,13 +60,9 @@ export default function AboutMe() {
             </ul>
             <div className="flex items-center gap-4 mt-4">
               <Link href={'/hobbies'}>
-                <Button>
-                  MY HOBBIES
-                </Button>
+                <Button>MY HOBBIES</Button>
               </Link>
-              <Button>
-                DOWNLOAD CV
-              </Button>
+              <Button>DOWNLOAD CV</Button>
             </div>
           </div>
         </div>

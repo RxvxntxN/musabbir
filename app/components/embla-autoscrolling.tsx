@@ -1,92 +1,83 @@
-'use client'
+'use client';
+import React from 'react';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
-import React from 'react'
-import { ExternalLink } from 'lucide-react'
-import AutoScroll from 'embla-carousel-auto-scroll'
-
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
-import { Button } from '@/components/ui/button'
-
-interface ShowcaseItem {
-  id: string
-  title: string
-  description: string
-  image: string
+interface TechItem {
+  id: string;
+  name: string;
+  icon: string;
 }
 
-const showcaseItems: ShowcaseItem[] = [
+const techItems: TechItem[] = [
   {
     id: '1',
-    title: 'Password Input',
-    description: 'Secure password input component',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop&q=80',
+    name: 'Tailwind CSS',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
   },
   {
     id: '2',
-    title: 'ZETR Hero Scroll',
-    description: 'Dynamic hero section with scroll',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop&q=80',
+    name: 'Next.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
   },
   {
     id: '3',
-    title: 'Dia Browser',
-    description: 'Modern browser interface',
-    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=500&h=400&fit=crop&q=80',
+    name: 'TypeScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
   },
   {
     id: '4',
-    title: 'Collins Carousel',
-    description: 'Beautiful product showcase',
-    image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b3f7?w=500&h=400&fit=crop&q=80',
+    name: 'JavaScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
   },
   {
     id: '5',
-    title: 'Business Switcher',
-    description: 'Smooth business transition UI',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop&q=80',
+    name: 'React',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   },
   {
     id: '6',
-    title: 'Motion Studio',
-    description: 'Advanced animation tool',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=400&fit=crop&q=80',
-  },
-  {
-    id: '7',
-    title: 'Scroll Animation',
-    description: 'Smooth scroll effects',
-    image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&h=400&fit=crop&q=80',
+    name: 'Node.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   },
   {
     id: '8',
-    title: 'Interactive UI',
-    description: 'Dynamic user interface',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop&q=80',
+    name: 'MUI',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg',
   },
-]
+  {
+    id: '10',
+    name: 'Git',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  },
+  {
+    id: '12',
+    name: 'Figma',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+  },
+];
 
-export default function ShowcaseCarousel() {
+export default function TechShowcase() {
   const plugin = React.useRef(
     AutoScroll({
-      speed: 1, // Adjust speed: 0.5 = slower, 2 = faster
+      speed: 2,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     })
-  )
+  );
 
   return (
-    <div className="w-full min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-16">
+    <div className="w-full bg-white dark:bg-stone-900 text-gray-900 flex flex-col items-center justify-center px-4 py-16 pt-24">
       {/* Header */}
-      <div className="mb-8 text-center max-w-2xl">
-        <div className="text-sm font-semibold text-gray-400 mb-4 tracking-widest">
-          SHOWCASE
+      <div className="mb-12 text-center max-w-2xl">
+        <div className="text-sm font-semibold text-gray-500 mb-4 tracking-widest dark:text-gray-300">
+          TECHNOLOGY STACK
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">
-          Made with Motion
+        <h1 className="text-6xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500 dark:hover:text-teal-500">
+          Built with Modern Tech
         </h1>
-        <p className="text-gray-400 text-lg">
-          Everything's possible with Motion. Here are some of the best
-          creations from our expert Motion+ community.
+        <p className="text-gray-600 dark:text-gray-300 text-lg">
+          We leverage the latest technologies to build robust, scalable, and beautiful applications.
         </p>
       </div>
 
@@ -101,40 +92,22 @@ export default function ShowcaseCarousel() {
           plugins={[plugin.current]}
           className="w-full"
         >
-          <CarouselContent className="ml-0">
-            {showcaseItems.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pl-4"
-              >
-                <div className="h-full">
-                  <div className="group relative overflow-hidden rounded-lg bg-gray-900 h-64 flex flex-col">
-                    {/* Image Container */}
-                    <div className="relative h-full w-full overflow-hidden bg-gray-800">
-                      <img
-                        src={item.image || "/placeholder.svg"}
-                        alt={item.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-
-                    {/* External Link Icon */}
-                    <div className="absolute top-3 right-3 bg-blue-500 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ExternalLink className="w-4 h-4 text-white" />
-                    </div>
+          <CarouselContent className="-ml-4">
+            {techItems.map((item) => (
+              <CarouselItem key={item.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 pl-4">
+                <div className="h-full flex flex-col items-center">
+                  <div className="group relative flex h-24 w-24 items-center justify-center rounded-lg transition-all duration-300 hover:bg-gray-100">
+                    {/* Icon */}
+                    <img
+                      src={item.icon}
+                      alt={item.name}
+                      className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
                   </div>
 
-                  {/* Title and Description */}
-                  <div className="mt-3">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-semibold text-white">{item.title}</h3>
-                      <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
-                    </div>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {item.description}
-                    </p>
+                  {/* Title */}
+                  <div className="mt-3 text-center w-full">
+                    <h3 className="font-medium text-gray-900 text-sm">{item.name}</h3>
                   </div>
                 </div>
               </CarouselItem>
@@ -143,19 +116,11 @@ export default function ShowcaseCarousel() {
         </Carousel>
 
         {/* Left Gradient Overlay */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black to-transparent dark:from-black" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-white to-transparent dark:from-stone-900" />
 
         {/* Right Gradient Overlay */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black to-transparent dark:from-black" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-white to-transparent dark:from-stone-900" />
       </div>
-
-      {/* CTA Button */}
-      <Button
-        variant="outline"
-        className="bg-white text-black hover:bg-gray-100 font-medium px-6 py-2 rounded-full"
-      >
-        Start making with Motion
-      </Button>
     </div>
-  )
+  );
 }

@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import Musabbir from '@/app/images/musabbir.png';
-import { FaReact } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { IoLogoJavascript } from "react-icons/io";
+import { FaReact } from 'react-icons/fa';
+import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
+import { IoLogoJavascript } from 'react-icons/io';
 import { IconType } from 'react-icons';
 
 type Skill = {
   icon: IconType;
   label: string;
   color: string;
-}
+};
 
 interface UserData {
   name: string;
@@ -17,7 +17,6 @@ interface UserData {
 }
 
 const CardDesign: React.FC = () => {
-
   const userData: UserData = {
     name: 'Muhammad Musabbir',
     labels: ['React.js', 'Next.js', 'JavaScript', 'Tailwind CSS'],
@@ -32,7 +31,6 @@ const CardDesign: React.FC = () => {
 
   return (
     <div className="bg-white w-md p-6 rounded-xl shadow-xl max-w-lg mx-auto transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-stone-900">
-      
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="relative">
           <Image
@@ -74,14 +72,15 @@ const CardDesign: React.FC = () => {
             key={index}
             className="bg-white dark:bg-stone-900 p-4 rounded-lg text-center flex flex-col items-center justify-center space-y-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-500 border border-gray-100 group"
           >
-            <skill.icon className={`text-2xl ${skill.color} group-hover:text-white transition-colors`} />
+            <skill.icon
+              className={`text-2xl ${skill.color} group-hover:text-white transition-colors`}
+            />
             <p className="font-semibold text-sm text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors">
               {skill.label}
             </p>
           </div>
         ))}
       </div>
-
     </div>
   );
 };

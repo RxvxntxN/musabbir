@@ -10,12 +10,10 @@ const HeroPage = () => {
           <h1 className=" text-4xl text-gray-700 md:text-6xl font-bold font-alegreya dark:text-gray-300">
             Hello, I&apos;m Musabbir
           </h1>
-          <span className="text-teal-500 text-2xl md:text-3xl block">
-            Front End Developer
-          </span>
+          <span className="text-teal-500 text-2xl md:text-3xl block">Front End Developer</span>
           <p className="text-black text-sm md:text-base dark:text-gray-300">
-            I'm always trying to bring real value and define problem with my codes. 
-            Welcome to my portfolio.
+            I'm always trying to bring real value and define problem with my codes. Welcome to my
+            portfolio.
           </p>
           <div className="pt-2">
             <Link href={'/projects'}>
