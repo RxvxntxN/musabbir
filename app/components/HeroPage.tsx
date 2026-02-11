@@ -18,7 +18,7 @@ const HeroPage = () => {
           <div className="pt-2">
             <Link href={'/projects'}>
               <button className="px-6 py-2 border-2 dark:text-gray-300 border-teal-500 text-black rounded-md hover:bg-teal-500 hover:text-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-opacity-50">
-                Explore More
+                See What I've Built
               </button>
             </Link>
           </div>

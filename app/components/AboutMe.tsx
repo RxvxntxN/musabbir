@@ -14,10 +14,13 @@ export default function AboutMe() {
         className="min-h-fit flex flex-col p-1 justify-center items-center dark:bg-stone-900 scroll-mt-28"
       >
         <div className="max-w-4xl w-full p-6 rounded-lg shadow-lg bg-opacity-80">
-          <h1 className="text-4xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500 dark:hover:text-teal-500">
-            About Me
-          </h1>
-          <hr className="w-24 h-1 bg-teal-500 border-0 rounded md:my-5"></hr>
+          <div>
+            <h1 className="relative group text-4xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500  dark:hover:text-teal-500 pb-2">
+              About Me
+              <span className="absolute left-0 -bottom-1 h-1 w-0 bg-teal-500 dark:bg-gray-200 transition-all duration-300 group-hover:w-52 rounded-full" />
+            </h1>
+          </div>
+
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Hi, I&apos;m Muhammad Musabbir! I was born with{' '}
             <Tooltip>

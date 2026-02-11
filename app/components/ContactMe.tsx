@@ -36,24 +36,15 @@ const ContactPage = () => {
 
       <div
         id="contact"
-        className="bg-white min-h-screen flex items-center justify-center p-6 dark:bg-stone-900"
+        className="bg-white flex items-center justify-center py-12 dark:bg-stone-900"
       >
-        <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
-          <div className="mb-4">
-            <Image
-              src="https://media.giphy.com/media/3o7TKU8RvQuomFfUUU/giphy.gif"
-              alt="Animated Contact GIF"
-              className="w-74 h-74 rounded-full object-cover"
-              width={400}
-              height={400}
-            />
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
+          <div>
+            <h1 className="text-5xl font-extrabold mb-4 text-center">
+              <span className="text-gray-700 dark:text-gray-300">Contact</span>{' '}
+              <span className="text-teal-400">Me</span>
+            </h1>
           </div>
-
-          <h1 className="text-5xl font-extrabold mb-4 text-center">
-            <span className="text-gray-700 dark:text-gray-300">Contact</span>{' '}
-            <span className="text-teal-400">Me</span>
-          </h1>
-
           <p className="text-lg leading-relaxed text-center mb-6 text-gray-700 dark:text-gray-300 max-w-xl">
             Feel free to reach out. I&apos;m always excited to connect and discuss new
             opportunities.

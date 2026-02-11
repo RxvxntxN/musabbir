@@ -117,11 +117,11 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-stone-900 backdrop-blur-md pt-3 flex flex-col md:flex-row items-center justify-center">
-      <motion.div className="max-w-7xl bg-teal-500 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative">
+    <nav className="sticky top-0 z-50 pt-3 flex flex-col md:flex-row items-center justify-center">
+      <motion.div className="max-w-7xl bg-teal-500/20 dark:bg-teal-400/20 backdrop-blur-lg border border-white/20 mx-auto px-4 w-full rounded-xl py-3 flex items-center justify-between shadow-2xl relative">
         <Link
           href="/"
-          className="font-bold text-lg text-white tracking-wide hover:opacity-90 transition"
+          className="font-bold text-lg text-gray-800 dark:text-gray-200 tracking-wide hover:opacity-90 transition"
         >
           My Portfolio
         </Link>
@@ -136,20 +136,20 @@ const NavigationBar = () => {
                 <button
                   key={item.label}
                   onClick={() => handleScroll(item.href.substring(1))}
-                  className="relative group cursor-pointer bg-transparent border-none text-white font-semibold p-0"
+                  className="relative group cursor-pointer bg-transparent border-none text-gray-800 dark:text-gray-200  font-semibold p-0"
                 >
                   <span>{item.label}</span>
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-800 dark:bg-gray-200 transition-all duration-300 group-hover:w-full" />
                 </button>
               ) : (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="relative group"
+                  className="relative group text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   <span>{item.label}</span>
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gray-800 dark:bg-gray-200 transition-all duration-300 group-hover:w-full" />
                 </Link>
               );
             })}
