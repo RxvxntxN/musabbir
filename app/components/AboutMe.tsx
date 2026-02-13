@@ -17,7 +17,7 @@ export default function AboutMe() {
           <div>
             <h1 className="relative group text-4xl text-gray-700 dark:text-gray-300 font-bold mb-4 flex items-center hover:text-teal-500  dark:hover:text-teal-500 pb-2">
               About Me
-              <span className="absolute left-0 -bottom-1 h-1 w-0 bg-teal-500 dark:bg-gray-200 transition-all duration-300 group-hover:w-52 rounded-full" />
+              <span className="absolute left-0 -bottom-1 h-1 w-0 bg-teal-500 dark:bg-teal-500 transition-all duration-300 group-hover:w-52 rounded-full" />
             </h1>
           </div>
 
