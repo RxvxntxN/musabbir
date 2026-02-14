@@ -1,9 +1,8 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { ExternalLink, Play, Headphones } from 'lucide-react';
+import { Play } from 'lucide-react';
 import NavigationBar from '@/app/components/NavigationBar';
 
 const musicTracks = [
@@ -11,80 +10,73 @@ const musicTracks = [
     id: 'MV_3Dpw-BRY',
     title: 'Nightcall',
     artist: 'Kavinsky',
-    genre: 'Synthwave / Electronic',
+    genre: 'Synthwave',
     description: 'Iconic synthwave track with that perfect retro vibe',
     year: '2011',
-    mood: 'Atmospheric',
   },
   {
     id: 'qUuvTpU0hWE',
     title: 'Forever In My Heart',
     artist: 'CMA',
-    genre: 'Electronic / Melodic',
+    genre: 'Electronic',
     description: 'Emotional and uplifting electronic melody',
     year: '2015',
-    mood: 'Emotional',
   },
   {
     id: 'WNeLUngb-Xg',
     title: 'In The End (Mellen Gi & Tommee Profitt Remix)',
     artist: 'Linkin Park',
-    genre: 'Rock / Electronic Remix',
+    genre: 'Rock Remix',
     description: 'Epic cinematic remake of the classic',
     year: '2018',
-    mood: 'Epic',
   },
   {
     id: 'v5jmn1MKbPo',
     title: 'Drive',
     artist: 'Jai Wolf feat. Chain Gang of 1974',
-    genre: 'Electronic / Indie Dance',
+    genre: 'Indie Dance',
     description: 'Nostalgic electronic track perfect for late night drives',
     year: '2016',
-    mood: 'Nostalgic',
   },
 ];
 
 export default function MusicHighlights() {
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen dark:bg-stone-900">
         <NavigationBar />
-        <div className="space-y-8 dark:bg-stone-900 min-h-screen p-6">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="flex justify-center">
-              <Badge className="bg-teal-500 text-white px-4 py-1 text-sm">🎵 Music I Love</Badge>
-            </div>
-            <p className="font-bold text-lg text-gray-700 dark:text-gray-300">
-              Music is my constant companion while coding, gaming, or just relaxing. Here are some
-              tracks that have been on repeat:
+
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-700 dark:text-gray-300 mb-4">
+              Music I Love
+            </h1>
+            <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              Music is my constant companion while coding, gaming, or just relaxing.
             </p>
           </div>
 
+          {/* Music Grid */}
           <div className="grid gap-6 md:grid-cols-2">
             {musicTracks.map((track) => (
               <Card
                 key={track.id}
-                className="overflow-hidden hover:shadow-lg transition-all hover:scale-[1.02] dark:bg-stone-800 group"
+                className="dark:bg-stone-800 border-gray-300 dark:border-stone-700 hover:scale-[1.02] transition-transform"
               >
-                <CardHeader className="pb-3">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl">{track.title}</CardTitle>
-                      <p className="text-lg font-semibold text-teal-500 dark:text-amber-300 mt-1">
-                        {track.artist}
-                      </p>
-                      <p className="text-sm text-muted-foreground mt-2">{track.description}</p>
-                    </div>
-                    <Badge variant="secondary" className="bg-teal-500 text-white font-bold">
-                      {track.genre}
-                    </Badge>
+                <CardHeader>
+                  <div className="space-y-2">
+                    <CardTitle className="text-xl text-gray-700 dark:text-gray-300">
+                      {track.title}
+                    </CardTitle>
+                    <p className="text-teal-500 font-semibold">{track.artist}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{track.description}</p>
                   </div>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  {/* YouTube Video Embed */}
-                  <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden border">
+                  {/* YouTube Embed */}
+                  <AspectRatio ratio={16 / 9} className="rounded-md overflow-hidden">
                     <iframe
                       src={`https://www.youtube.com/embed/${track.id}?rel=0&modestbranding=1`}
                       className="w-full h-full"
@@ -94,41 +86,28 @@ export default function MusicHighlights() {
                     />
                   </AspectRatio>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 font-bold items-center gap-2 bg-stone-900 dark:bg-amber-300 hover:bg-stone-800 dark:hover:bg-amber-400 text-white dark:text-gray-900"
+                  {/* Listen Button */}
+                  <Button
+                    asChild
+                    className="w-full border-2 border-teal-500 bg-transparent text-gray-700 dark:text-gray-300 hover:bg-teal-500 hover:text-white transition-all duration-300"
+                  >
+                    <a
+                      href={`https://youtu.be/${track.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
                     >
-                      <a
-                        href={`https://youtu.be/${track.id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Play className="mr-2 h-4 w-4" />
-                        Listen on YouTube
-                      </a>
-                    </Button>
-                  </div>
+                      <Play className="w-4 h-4" />
+                      Listen on YouTube
+                    </a>
+                  </Button>
 
-                  {/* Music Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline" className="bg-purple-500 text-white font-bold">
-                      <Headphones className="mr-1 h-3 w-3" />
-                      {track.year}
-                    </Badge>
-                    <Badge variant="outline" className="bg-blue-500 text-white font-bold">
-                      Mood: {track.mood}
-                    </Badge>
-                    <Badge variant="outline" className="bg-teal-500 text-white font-bold">
-                      Electronic
-                    </Badge>
+                  {/* Tags */}
+                  <div className="flex gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <span>{track.genre}</span>
+                    <span>•</span>
+                    <span>{track.year}</span>
                   </div>
-
-                  {/* Mini player note */}
-                  <p className="text-xs text-muted-foreground text-center italic">
-                    Click play above or listen directly on YouTube 🎧
-                  </p>
                 </CardContent>
               </Card>
             ))}
