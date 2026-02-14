@@ -133,24 +133,6 @@ export default function MusicHighlights() {
               </Card>
             ))}
           </div>
-
-          {/* Footer with music platform links */}
-          <div className="text-center pt-8">
-            <p className="text-sm text-muted-foreground">
-              Find me on •{' '}
-              <a href="#" className="text-teal-500 hover:underline" target="_blank" rel="noopener">
-                Spotify
-              </a>
-              {' • '}
-              <a href="#" className="text-teal-500 hover:underline" target="_blank" rel="noopener">
-                Apple Music
-              </a>
-              {' • '}
-              <a href="#" className="text-teal-500 hover:underline" target="_blank" rel="noopener">
-                Last.fm
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </>

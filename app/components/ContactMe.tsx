@@ -15,19 +15,57 @@ const ContactPage = () => {
     phone: '+8801918166104',
   };
 
+  // Helper function to show the toast notification
+  const showToast = (type: string, text: string) => {
+    toast.success(
+      <div>
+        <div className="text-teal-400 font-bold">{type} copied to clipboard!</div>
+        <div className="text-gray-300 text-sm mt-1">{text}</div>
+      </div>,
+      {
+        position: 'bottom-right',
+      }
+    );
+  };
+
+  // The updated copyToClipboard function with fallback
   const copyToClipboard = (text: string, type: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      // Painful Custom toast notification lmfao
-      toast.success(
-        <div>
-          <div className="text-teal-400 font-bold">{type} copied to clipboard!</div>
-          <div className="text-gray-300 text-sm mt-1">{text}</div>
-        </div>,
-        {
-          position: 'bottom-right',
+    // 1. Check if the modern Clipboard API is available
+    if (navigator.clipboard && window.isSecureContext) {
+      // Use the modern API
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          showToast(type, text);
+        })
+        .catch((err) => {
+          console.error('Failed to copy text: ', err);
+        });
+    } else {
+      // 2. Fallback for older browsers or non-secure contexts
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      // Make the textarea out of viewport
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        // Execute the copy command
+        const successful = document.execCommand('copy');
+        if (successful) {
+          showToast(type, text);
+        } else {
+          console.error('Fallback: Unable to copy text');
         }
-      );
-    });
+      } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+      }
+      // Remove the textarea from the DOM
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
