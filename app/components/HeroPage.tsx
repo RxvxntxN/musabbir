@@ -25,7 +25,9 @@ const HeroPage = () => {
           <span className="text-teal-500 text-2xl md:text-3xl block">Front End Developer</span>
 
           <div className="text-gray-600 text-sm md:text-base dark:text-gray-300 leading-relaxed">
-            Welcome to my portfolio. I bring real value through clean, purposeful code. I build{' '}
+            I&apos;m a junior developer who takes my craft seriously and I care about clean code,
+            good design, and building things people actually enjoy using. I&apos;m currently focused
+            on building{' '}
             <TextTransition
               inline
               className="inline-flex text-teal-500 font-medium"
