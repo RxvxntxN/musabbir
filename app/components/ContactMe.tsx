@@ -2,7 +2,6 @@
 import { MdEmail } from 'react-icons/md';
 import { BsPhone } from 'react-icons/bs';
 import { FaLinkedin } from 'react-icons/fa';
-import Image from 'next/image';
 import { Toaster } from '../../components/ui/sonner';
 import { toast } from 'sonner';
 import { Copy } from 'lucide-react';

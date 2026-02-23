@@ -2,6 +2,7 @@
 import React from 'react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Image from 'next/image';
 
 interface TechItem {
   id: string;
@@ -97,10 +98,11 @@ export default function TechShowcase() {
               <CarouselItem key={item.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 pl-4">
                 <div className="h-full flex flex-col items-center">
                   <div className="group relative flex h-24 w-24 items-center justify-center rounded-lg transition-all duration-300 hover:bg-gray-100">
-                    {/* Icon */}
-                    <img
+                    <Image
                       src={item.icon}
                       alt={item.name}
+                      width={64}
+                      height={64}
                       className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>

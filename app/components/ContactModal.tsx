@@ -47,7 +47,7 @@ export default function ContactModal({
               <X size={24} />
             </button>
           </div>
-          <p className="text-white/90 mt-2">Let's start a conversation</p>
+          <p className="text-white/90 mt-2">Let&apos;s start a conversation</p>
         </div>
 
         {/* Modal Body with Form */}

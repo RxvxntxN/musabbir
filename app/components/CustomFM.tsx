@@ -7,7 +7,7 @@
 //   const scrollToSection = () => {
 //     // Find the element on the page with the ID "target-section"
 //     const element = document.getElementById("end-Section");
-    
+
 //     // If the element exists, scroll to it smoothly
 //     if (element) {
 //       element.scrollIntoView({ behavior: "smooth" });
@@ -21,17 +21,17 @@
 //         <motion.button
 //           // The onClick calls our scroll function
 //           onClick={scrollToSection}
-          
+
 //           // These are simple Framer Motion animations for the button itself
 //           whileHover={{ scale: 1.1 }}
 //           whileTap={{ scale: 0.9 }}
-          
-//           style={{ 
-//             background: 'teal', 
-//             color: 'white', 
-//             border: 'none', 
-//             padding: '10px 20px', 
-//             cursor: 'pointer', 
+
+//           style={{
+//             background: 'teal',
+//             color: 'white',
+//             border: 'none',
+//             padding: '10px 20px',
+//             cursor: 'pointer',
 //             borderRadius: '5px',
 //             fontWeight: 'bold'
 //           }}
@@ -48,16 +48,16 @@
 //       {/* 2. The Target Section */}
 //       <section
 //         // This ID is CRUCIAL. It must match the ID in our function.
-//         id="target-section" 
-        
-//         style={{ 
-//           height: '100vh', 
-//           background: '#2d3748', 
-//           color: 'white', 
-//           display: 'flex', 
-//           alignItems: 'center', 
-//           justifyContent: 'center', 
-//           fontSize: '3rem' 
+//         id="target-section"
+
+//         style={{
+//           height: '100vh',
+//           background: '#2d3748',
+//           color: 'white',
+//           display: 'flex',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//           fontSize: '3rem'
 //         }}
 //       >
 //         <h2>You've Arrived!</h2>
@@ -82,7 +82,7 @@
 //   return (
 //     <div className="relative overflow-hidden py-8">
 //       <div className="absolute inset-0 z-10 pointer-events-none" />
-      
+
 //       <motion.div
 //         className="flex gap-8"
 //         animate={{ x: ["0%", "-50%"] }}
@@ -252,7 +252,7 @@
 //   const handleHoverEnd = () => controls.resume();
 
 //   const techStack = [
-//     "React", "Next.js", "TypeScript", "Tailwind CSS", 
+//     "React", "Next.js", "TypeScript", "Tailwind CSS",
 //     "Node.js", "Express", "MongoDB", "PostgreSQL",
 //     "GraphQL", "Redis", "Docker", "AWS",
 //     "Git", "Jest", "Cypress", "Webpack"
@@ -268,7 +268,7 @@
 //       <h3 className="text-lg font-semibold text-teal-800 dark:text-teal-300 mb-4">
 //         Tech Stack (Hover to pause)
 //       </h3>
-      
+
 //       <motion.div
 //         ref={contentRef}
 //         animate={controls}
@@ -392,7 +392,7 @@
 //       <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
 //         Career Timeline
 //       </h3>
-      
+
 //       <div
 //         ref={containerRef}
 //         className="relative h-80 overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-stone-800 dark:to-stone-900 border border-blue-100 dark:border-stone-700"
@@ -409,7 +409,7 @@
 //                 <div className="absolute left-0 top-1 w-3 h-3 bg-blue-500 rounded-full transform -translate-x-1/2" />
 //                 {/* Timeline line */}
 //                 <div className="absolute left-0 top-4 w-0.5 h-full bg-blue-200 dark:bg-blue-800 transform -translate-x-1/2" />
-                
+
 //                 <div className="ml-4">
 //                   <div className="inline-block px-3 py-1 text-xs font-semibold text-white bg-blue-500 rounded-full">
 //                     {item.year}
@@ -533,7 +533,7 @@
 //   const handleDragEnd = useCallback(
 //     (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
 //       setIsDragging(false);
-      
+
 //       // If dragged enough, change slide
 //       if (info.offset.x > 50) {
 //         // Swiped right - go to previous
@@ -550,7 +550,7 @@
 //           return newIndex >= items.length * 3 ? items.length : newIndex;
 //         });
 //       }
-      
+
 //       // Resume auto-play after dragging
 //       setTimeout(() => setIsAutoPlaying(true), 3000);
 //     },
@@ -564,10 +564,10 @@
 
 //     const handleWheel = (e: WheelEvent) => {
 //       if (isDragging) return;
-      
+
 //       e.preventDefault();
 //       setIsAutoPlaying(false);
-      
+
 //       if (e.deltaX > 0 || e.deltaY > 0) {
 //         // Scroll right/down
 //         setCurrentIndex((prev) => {
@@ -645,7 +645,7 @@
 //               {isAutoPlaying ? "Auto-playing" : "Paused"} • Draggable
 //             </span>
 //           </div>
-          
+
 //           <div className="flex gap-2">
 //             <button
 //               onClick={goToPrev}
@@ -696,7 +696,7 @@
 //                   <h3 className="text-xl font-bold text-center">{item.text}</h3>
 //                   <p className="text-white/80 text-sm mt-2">Slide {index % items.length + 1}</p>
 //                 </div>
-                
+
 //                 {/* Index indicator */}
 //                 <div className="absolute top-3 right-3 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center text-white text-xs">
 //                   {index + 1}
@@ -802,7 +802,7 @@
 //   // Auto-play function
 //   const startAutoPlay = useCallback(() => {
 //     if (!isAutoPlaying || isDragging) return;
-    
+
 //     autoPlayAnimation.current = animate(x, x.get() - itemWidth, {
 //       duration: 2,
 //       ease: "linear",
@@ -850,21 +850,21 @@
 //     // Update velocity based on drag speed
 //     const currentTime = Date.now();
 //     const deltaTime = currentTime - lastDragTime.current;
-    
+
 //     if (deltaTime > 0) {
 //       velocity.current = info.delta.x / deltaTime;
 //     }
-    
+
 //     lastDragTime.current = currentTime;
 //   };
 
 //   const handleDragEnd = (event: any, info: PanInfo) => {
 //     setIsDragging(false);
-    
+
 //     // Calculate momentum (continues movement after release)
 //     const momentum = velocity.current * 500; // Multiply velocity by factor
 //     const targetX = x.get() + momentum;
-    
+
 //     // Animate with spring physics for the momentum
 //     const momentumAnimation = animate(x, targetX, {
 //       type: "spring",
@@ -888,7 +888,7 @@
 //         }
 //       },
 //     });
-    
+
 //     velocity.current = 0;
 //   };
 
@@ -901,11 +901,11 @@
 //       e.preventDefault();
 //       setIsAutoPlaying(false);
 //       stopAutoPlay();
-      
+
 //       // Add wheel velocity
 //       const wheelVelocity = e.deltaY * 0.5;
 //       const newX = x.get() + wheelVelocity;
-      
+
 //       animate(x, newX, {
 //         type: "spring",
 //         stiffness: 200,
@@ -922,10 +922,10 @@
 //   const navigateWithMomentum = (direction: "left" | "right") => {
 //     setIsAutoPlaying(false);
 //     stopAutoPlay();
-    
+
 //     const moveDistance = direction === "left" ? itemWidth : -itemWidth;
 //     const newX = x.get() + moveDistance;
-    
+
 //     animate(x, newX, {
 //       type: "spring",
 //       stiffness: 150,
@@ -939,7 +939,7 @@
 //     const currentX = x.get();
 //     const nearestIndex = Math.round(-currentX / itemWidth) % items.length;
 //     const targetX = -nearestIndex * itemWidth;
-    
+
 //     animate(x, targetX, {
 //       type: "spring",
 //       stiffness: 300,
@@ -971,7 +971,7 @@
 //           >
 //             {isAutoPlaying ? "⏸️ Pause Auto" : "▶️ Play Auto"}
 //           </button>
-          
+
 //           <button
 //             onClick={snapToNearest}
 //             className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-colors"
@@ -979,7 +979,7 @@
 //             🔍 Snap to Item
 //           </button>
 //         </div>
-        
+
 //         <div className="flex gap-3">
 //           <button
 //             onClick={() => navigateWithMomentum("left")}
@@ -1014,12 +1014,12 @@
 //         >
 //           {duplicatedItems.map((item, index) => {
 //             const isInMiddleSection = index >= items.length && index < items.length * 2;
-            
+
 //             return (
 //               <motion.div
 //                 key={`${item.id}-${index}`}
 //                 className={`relative flex-shrink-0 w-64 rounded-2xl p-6 shadow-xl ${
-//                   isInMiddleSection 
+//                   isInMiddleSection
 //                     ? 'bg-gradient-to-br from-white to-gray-50 dark:from-stone-800 dark:to-stone-900'
 //                     : 'bg-gradient-to-br from-gray-100 to-gray-200 dark:from-stone-900 dark:to-stone-800 opacity-70'
 //                 } border border-gray-200 dark:border-stone-700`}
@@ -1032,7 +1032,7 @@
 //                     {item.title}
 //                   </h3>
 //                   <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
-                  
+
 //                   {/* Velocity indicator */}
 //                   {isDragging && (
 //                     <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
@@ -1042,10 +1042,10 @@
 //                     </div>
 //                   )}
 //                 </div>
-                
+
 //                 {/* Section indicator */}
 //                 <div className={`absolute top-3 right-3 text-xs font-semibold px-2 py-1 rounded ${
-//                   isInMiddleSection 
+//                   isInMiddleSection
 //                     ? 'bg-blue-500 text-white'
 //                     : 'bg-gray-300 dark:bg-stone-700 text-gray-600 dark:text-gray-400'
 //                 }`}>
@@ -1066,7 +1066,7 @@
 //         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
 //           🚀 Physics Settings
 //         </h3>
-        
+
 //         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 //           <div className="p-4 bg-white/50 dark:bg-stone-800/50 rounded-lg">
 //             <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Current Velocity</div>
@@ -1075,7 +1075,7 @@
 //             </div>
 //             <div className="text-xs text-gray-500 mt-1">px/ms (higher = more momentum)</div>
 //           </div>
-          
+
 //           <div className="p-4 bg-white/50 dark:bg-stone-800/50 rounded-lg">
 //             <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Auto-play</div>
 //             <div className={`text-2xl font-bold ${isAutoPlaying ? 'text-green-600' : 'text-yellow-600'}`}>
@@ -1085,7 +1085,7 @@
 //               {isDragging ? '(Dragging)' : '(Click items to drag)'}
 //             </div>
 //           </div>
-          
+
 //           <div className="p-4 bg-white/50 dark:bg-stone-800/50 rounded-lg">
 //             <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Current Position</div>
 //             <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
@@ -1136,7 +1136,7 @@
 // import { useEffect, useRef, useState } from "react";
 
 // const items = [
-//   "🎨 Design", "⚡ Performance", "🔋 Battery Life", "📷 Camera", 
+//   "🎨 Design", "⚡ Performance", "🔋 Battery Life", "📷 Camera",
 //   "🤖 AI", "🔒 Security", "🌐 Global", "💡 Innovation",
 //   "🚀 Speed", "📱 Usability", "🧩 Integration"
 // ];
@@ -1144,7 +1144,7 @@
 // export default function TrueInfiniteCarousel() {
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [carouselWidth, setCarouselWidth] = useState(0);
-  
+
 //   const controls = useAnimation();
 //   const x = useMotionValue(0);
 
@@ -1191,20 +1191,20 @@
 //         style={{ x }}
 //         animate={controls}
 //         whileHover={{ animationPlayState: "paused" }}
-        
+
 //         // Stop the animation on drag start
 //         onDragStart={() => controls.stop()}
-        
+
 //         // --- THE OTHER PART OF THE FIX ---
 //         // On drag end, we call our robust start function instead of just controls.start()
 //         onDragEnd={startAnimation}
-        
+
 //         onDrag={() => {
 //           const dragOffset = x.get();
-          
+
 //           if (dragOffset > 0) {
 //             x.set(dragOffset - carouselWidth);
-//           } 
+//           }
 //           else if (dragOffset < -carouselWidth) {
 //             x.set(dragOffset + carouselWidth);
 //           }
@@ -1248,7 +1248,7 @@
 // import { useEffect, useRef, useState } from "react";
 
 // const items = [
-//   "🎨 Design", "⚡ Performance", "🔋 Battery Life", "📷 Camera", 
+//   "🎨 Design", "⚡ Performance", "🔋 Battery Life", "📷 Camera",
 //   "🤖 AI", "🔒 Security", "🌐 Global", "💡 Innovation",
 //   "🚀 Speed", "📱 Usability", "🧩 Integration"
 // ];
@@ -1256,7 +1256,7 @@
 // export default function TrueInfiniteCarousel() {
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [carouselWidth, setCarouselWidth] = useState(0);
-  
+
 //   const controls = useAnimation();
 //   const x = useMotionValue(0);
 
@@ -1302,13 +1302,13 @@
 //         dragConstraints={{ left: -carouselWidth * 4, right: 0 }} // Constraints for the full 4-list width
 //         style={{ x }}
 //         animate={controls}
-        
+
 //         // Pause on hover
 //         whileHover={{ animationPlayState: "paused" }}
-        
+
 //         // Stop animation on drag start
 //         onDragStart={() => controls.stop()}
-        
+
 //         // Restart animation on drag end
 //         onDragEnd={startAnimation}
 //       >
@@ -1350,7 +1350,7 @@
 // export default function ProInfiniteCarousel() {
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [itemsWidth, setItemsWidth] = useState(0);
-  
+
 //   const x = useMotionValue(0);
 //   const baseVelocity = -50; // pixels per second (negative = left, positive = right)
 //   const velocityRef = useRef(baseVelocity);
@@ -1384,7 +1384,7 @@
 
 //   const handleDrag = (event: any, info: any) => {
 //     if (!itemsWidth) return;
-    
+
 //     let newX = x.get() + info.delta.x;
 
 //     // Seamless loop during drag
@@ -1461,7 +1461,7 @@
 //   // We need a ref to the container to measure its width
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [carouselWidth, setCarouselWidth] = useState(0);
-  
+
 //   // useAnimation gives us full manual control to start/stop animations
 //   const controls = useAnimation();
 //   // useMotionValue tracks the current x position, which is useful for drag gestures
@@ -1480,7 +1480,7 @@
 //   const startAnimation = () => {
 //     // Don't start if we don't have a width yet
 //     if (carouselWidth === 0) return;
-    
+
 //     controls.start({
 //       // Animate from the current position to the position of the THIRD list
 //       // This creates a very long, smooth path before the reset
@@ -1539,7 +1539,7 @@
 //         onDragStart={() => controls.stop()} // Stop auto-scroll on drag
 //         onDragEnd={handleDragEnd} // Handle the end of the drag
 //       >
-//         {/* 
+//         {/*
 //           --- Step 4: Render the list FOUR times ---
 //           This creates the long path. The animation travels across two lists,
 //           and the snap back happens when the third list is in view, which is
@@ -1563,7 +1563,6 @@
 
 // {    -------------------------------------------------------------------------------------------}
 
-
 // "use client";
 
 // import { motion, useMotionValue, useAnimationFrame, PanInfo } from "framer-motion";
@@ -1583,7 +1582,7 @@
 // export default function ProInfiniteCarousel() {
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [itemsWidth, setItemsWidth] = useState(0);
-  
+
 //   const x = useMotionValue(0);
 //   const velocityRef = useRef(0);
 //   const isDraggingRef = useRef(false);
@@ -1621,7 +1620,7 @@
 
 //   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
 //     isDraggingRef.current = false;
-    
+
 //     // Set velocity based on drag velocity
 //     velocityRef.current = info.velocity.x;
 //   };
@@ -1678,7 +1677,7 @@
 // export default function ProInfiniteCarousel() {
 //   const carouselRef = useRef<HTMLDivElement>(null);
 //   const [itemsWidth, setItemsWidth] = useState(0);
-  
+
 //   const baseX = useMotionValue(0);
 //   const baseVelocity = -250;
 //   const velocityRef = useRef(baseVelocity);
@@ -1744,82 +1743,81 @@
 // }
 
 // {    -------------------------------------------------------------------------------------------}
-"use client";
+// "use client";
 
-import { motion, useMotionValue, useAnimationFrame, PanInfo, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+// import { motion, useMotionValue, useAnimationFrame, PanInfo, useTransform } from "framer-motion";
+// import { useRef, useState, useEffect } from "react";
 
-const items = [
-  { id: 1, title: "Dia Browser", color: "from-purple-500 to-pink-500" },
-  { id: 2, title: "Collins Carousel", color: "from-blue-500 to-teal-500" },
-  { id: 3, title: "Business Switcher", color: "from-orange-500 to-red-500" },
-  { id: 4, title: "Scroll Animation", color: "from-green-500 to-lime-500" },
-  { id: 5, title: "Radial Slider", color: "from-cyan-500 to-blue-500" },
-  { id: 6, title: "Heart Button", color: "from-rose-500 to-pink-500" },
-  { id: 7, title: "iPhone Accordion", color: "from-indigo-500 to-purple-500" },
-  { id: 8, title: "Looping Images", color: "from-yellow-500 to-orange-500" },
-];
+// const items = [
+//   { id: 1, title: "Dia Browser", color: "from-purple-500 to-pink-500" },
+//   { id: 2, title: "Collins Carousel", color: "from-blue-500 to-teal-500" },
+//   { id: 3, title: "Business Switcher", color: "from-orange-500 to-red-500" },
+//   { id: 4, title: "Scroll Animation", color: "from-green-500 to-lime-500" },
+//   { id: 5, title: "Radial Slider", color: "from-cyan-500 to-blue-500" },
+//   { id: 6, title: "Heart Button", color: "from-rose-500 to-pink-500" },
+//   { id: 7, title: "iPhone Accordion", color: "from-indigo-500 to-purple-500" },
+//   { id: 8, title: "Looping Images", color: "from-yellow-500 to-orange-500" },
+// ];
 
-// Pre-calculate item dimensions
-const ITEM_WIDTH = 300; // min-w-75 = 300px
-const GAP = 24; // gap-6 = 24px
-const ITEM_WITH_GAP = ITEM_WIDTH + GAP;
-const TOTAL_ITEMS = items.length;
-const LOOP_WIDTH = ITEM_WITH_GAP * TOTAL_ITEMS;
+// // Pre-calculate item dimensions
+// const ITEM_WIDTH = 300; // min-w-75 = 300px
+// const GAP = 24; // gap-6 = 24px
+// const ITEM_WITH_GAP = ITEM_WIDTH + GAP;
+// const TOTAL_ITEMS = items.length;
+// const LOOP_WIDTH = ITEM_WITH_GAP * TOTAL_ITEMS;
 
-export default function CustomFM() {
-  const baseX = useMotionValue(0);
-  const baseVelocity = -250;
-  const velocityRef = useRef(baseVelocity);
-  const isDraggingRef = useRef(false);
+// export default function CustomFM() {
+//   const baseX = useMotionValue(0);
+//   const baseVelocity = -250;
+//   const velocityRef = useRef(baseVelocity);
+//   const isDraggingRef = useRef(false);
 
-  const x = useTransform(baseX, (value) => {
-    return -(LOOP_WIDTH + (value % LOOP_WIDTH));
-  });
+//   const x = useTransform(baseX, (value) => {
+//     return -(LOOP_WIDTH + (value % LOOP_WIDTH));
+//   });
 
-  useAnimationFrame((t, delta) => {
-    if (isDraggingRef.current) return;
+//   useAnimationFrame((t, delta) => {
+//     if (isDraggingRef.current) return;
 
-    let moveBy = (velocityRef.current * delta) / 1000;
-    baseX.set(baseX.get() + moveBy);
+//     let moveBy = (velocityRef.current * delta) / 1000;
+//     baseX.set(baseX.get() + moveBy);
 
-    if (velocityRef.current !== baseVelocity) {
-      const diff = baseVelocity - velocityRef.current;
-      velocityRef.current += diff * 0.02;
-    }
-  });
+//     if (velocityRef.current !== baseVelocity) {
+//       const diff = baseVelocity - velocityRef.current;
+//       velocityRef.current += diff * 0.02;
+//     }
+//   });
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    isDraggingRef.current = false;
-    velocityRef.current = baseVelocity + info.velocity.x * 0.5;
-  };
+//   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+//     isDraggingRef.current = false;
+//     velocityRef.current = baseVelocity + info.velocity.x * 0.5;
+//   };
 
-  return (
-    <div className="relative w-full overflow-hidden bg-white py-12">
-      <motion.div
-        className="flex gap-6 cursor-grab active:cursor-grabbing"
-        style={{ x }}
-        drag="x"
-        dragElastic={0.2}
-        dragMomentum={false}
-        onDragStart={() => {
-          isDraggingRef.current = true;
-        }}
-        onDragEnd={handleDragEnd}
-      >
-        {[0, 1, 2].map((listIndex) =>
-          items.map((item) => (
-            <motion.div
-              key={`${item.id}-${listIndex}`}
-              className={`min-w-75 h-50 rounded-2xl bg-linear-to-br ${item.color} p-6 flex flex-col justify-between shadow-2xl`}
-            >
-              <h3 className="text-white text-2xl font-bold">{item.title}</h3>
-              <div className="w-full h-16 bg-white/20 rounded-lg"></div>
-            </motion.div>
-          ))
-        )}
-      </motion.div>
-    </div>
-  );
-}
-
+//   return (
+//     <div className="relative w-full overflow-hidden bg-white py-12">
+//       <motion.div
+//         className="flex gap-6 cursor-grab active:cursor-grabbing"
+//         style={{ x }}
+//         drag="x"
+//         dragElastic={0.2}
+//         dragMomentum={false}
+//         onDragStart={() => {
+//           isDraggingRef.current = true;
+//         }}
+//         onDragEnd={handleDragEnd}
+//       >
+//         {[0, 1, 2].map((listIndex) =>
+//           items.map((item) => (
+//             <motion.div
+//               key={`${item.id}-${listIndex}`}
+//               className={`min-w-75 h-50 rounded-2xl bg-linear-to-br ${item.color} p-6 flex flex-col justify-between shadow-2xl`}
+//             >
+//               <h3 className="text-white text-2xl font-bold">{item.title}</h3>
+//               <div className="w-full h-16 bg-white/20 rounded-lg"></div>
+//             </motion.div>
+//           ))
+//         )}
+//       </motion.div>
+//     </div>
+//   );
+// }
