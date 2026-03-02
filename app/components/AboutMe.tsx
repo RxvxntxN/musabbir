@@ -63,9 +63,11 @@ export default function AboutMe() {
             </ul>
             <div className="flex items-center gap-4 mt-4">
               <Link href={'/hobbies'}>
-                <Button>MY HOBBIES</Button>
+                <Button className="font-bold">MY HOBBIES</Button>
               </Link>
-              <Button>DOWNLOAD CV</Button>
+              <a href="/Musabbir2026.pdf" target="_blank" rel="noopener noreferrer">
+                <Button className="font-bold">MY RESUME</Button>
+              </a>
             </div>
           </div>
         </div>
