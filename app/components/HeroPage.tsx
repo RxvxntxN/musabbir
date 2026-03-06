@@ -4,7 +4,7 @@ import CardDesign from './CardDesign';
 import Link from 'next/link';
 import TextTransition from './Transition';
 
-const TEXTS = ['responsive website', 'reusable component', 'smooth user experience'];
+const TEXTS = ['responsive web application', 'reusable component', 'smooth user experience'];
 
 const HeroPage = () => {
   const [index, setIndex] = useState(0);
