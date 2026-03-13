@@ -30,7 +30,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          //disableTransitionOnChange
         >
           {children}
           {/* We put the new wrapper component here */}
