@@ -162,7 +162,7 @@ const NavigationBar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
-          <div>
+          <div className="flex items-center gap-2">
             <ModeToggle />
           </div>
 

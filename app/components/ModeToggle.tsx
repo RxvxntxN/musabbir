@@ -18,18 +18,14 @@ export default function ModeToggle() {
     <button
       onClick={() => setTheme(isLight ? 'dark' : 'light')}
       aria-label="Toggle theme"
-      className="relative w-13 h-7 rounded-full shrink-0 overflow-hidden border border-white/25 transition-colors duration-350"
-      style={{
-        background: isLight ? 'rgba(20, 184, 166, 0.45)' : 'rgba(15, 118, 110, 0.55)',
-      }}
+      className={`
+        relative w-13 h-7 rounded-full shrink-0 overflow-hidden 
+        border border-white/25 transition-colors duration-350
+        ${isLight ? 'bg-[rgba(20,184,166,0.45)]' : 'bg-[rgba(15,118,110,0.55)]'}
+      `}
     >
       {/* Glass shimmer — matches navbar */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 60%)',
-        }}
-      />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(120deg,rgba(255,255,255,0.12)_0%,transparent_60%)]" />
 
       {/* Spring thumb */}
       <motion.span
@@ -64,6 +60,73 @@ export default function ModeToggle() {
     </button>
   );
 }
+
+// 'use client';
+
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { Moon, Sun } from 'lucide-react';
+// import { useTheme } from 'next-themes';
+// import { useState, useEffect } from 'react';
+
+// export default function ModeToggle() {
+//   const { theme, setTheme } = useTheme();
+//   const [mounted, setMounted] = useState(false);
+
+//   useEffect(() => setMounted(true), []);
+//   if (!mounted) return null;
+
+//   const isLight = theme === 'light';
+
+//   return (
+//     <button
+//       onClick={() => setTheme(isLight ? 'dark' : 'light')}
+//       aria-label="Toggle theme"
+//       className="relative w-13 h-7 rounded-full shrink-0 overflow-hidden border border-white/25 transition-colors duration-350"
+//       style={{
+//         background: isLight ? 'rgba(20, 184, 166, 0.45)' : 'rgba(15, 118, 110, 0.55)',
+//       }}
+//     >
+//       {/* Glass shimmer — matches navbar */}
+//       <div
+//         className="absolute inset-0 pointer-events-none"
+//         style={{
+//           background: 'linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 60%)',
+//         }}
+//       />
+
+//       {/* Spring thumb */}
+//       <motion.span
+//         className="absolute top-0.75 left-0.75 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-sm"
+//         animate={{ x: isLight ? 24 : 0 }}
+//         transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+//       >
+//         <AnimatePresence mode="wait" initial={false}>
+//           {isLight ? (
+//             <motion.span
+//               key="sun"
+//               initial={{ opacity: 0, scale: 0.5 }}
+//               animate={{ opacity: 1, scale: 1 }}
+//               exit={{ opacity: 0, scale: 0.5 }}
+//               transition={{ duration: 0.15 }}
+//             >
+//               <Sun size={11} className="text-teal-600" />
+//             </motion.span>
+//           ) : (
+//             <motion.span
+//               key="moon"
+//               initial={{ opacity: 0, scale: 0.5 }}
+//               animate={{ opacity: 1, scale: 1 }}
+//               exit={{ opacity: 0, scale: 0.5 }}
+//               transition={{ duration: 0.15 }}
+//             >
+//               <Moon size={11} className="text-teal-700" fill="currentColor" />
+//             </motion.span>
+//           )}
+//         </AnimatePresence>
+//       </motion.span>
+//     </button>
+//   );
+// }
 
 // 'use client';
 
