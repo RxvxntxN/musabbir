@@ -155,7 +155,7 @@ const NavigationBar = () => {
             })}
           </div>
 
-          <div className="ml-4">
+          <div className="ml-4 flex items-center">
             <ModeToggle />
           </div>
         </div>
