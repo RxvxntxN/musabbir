@@ -8,8 +8,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <main>
-        {/* <Emblascroll />
-        <CustomFM /> */}
+        {/* just my custom component <CustomFM /> */}
         <NavigationBar />
         <HeroPage />
         <AboutMe />

@@ -20,6 +20,7 @@ const NavigationBar = () => {
 
   const menuItems: MenuItem[] = [
     { label: 'Projects', href: '/projects' },
+    { label: 'Certificates', href: '/certificates' },
     { label: 'About', href: '#about' },
     { label: 'Hire Me', href: '#contact' },
   ];

@@ -36,7 +36,7 @@ export default function AboutMe() {
             </Tooltip>
             . I am passionate about web development, especially working with frameworks like Next.js
             and React. I enjoy building beautiful, functional, and responsive web applications.
-            Outside of coding, I love gaming, with a special interest in Apex Legends and
+            Outside of coding, I love musics and gaming, with a special interest in Apex Legends and
             Counter-Strike 2.
           </p>
           <div className="mt-6">
@@ -65,7 +65,7 @@ export default function AboutMe() {
               <Link href={'/hobbies'}>
                 <Button className="font-bold">MY HOBBIES</Button>
               </Link>
-              <a href="/Musabbir2026.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Musabbir2026.pdf" download rel="noopener noreferrer">
                 <Button className="font-bold">MY RESUME</Button>
               </a>
             </div>

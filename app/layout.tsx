@@ -33,7 +33,7 @@ export default function RootLayout({
           //disableTransitionOnChange
         >
           {children}
-          {/* We put the new wrapper component here */}
+          {/* new wrapper component here */}
           <ContactWrapper />
         </ThemeProvider>
       </body>

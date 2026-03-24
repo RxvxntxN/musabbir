@@ -78,7 +78,7 @@ export default function TechShowcase() {
           Built with Modern Tech
         </h1>
         <p className="text-gray-600 dark:text-gray-300 text-lg">
-          We leverage the latest technologies to build robust, scalable, and beautiful applications.
+          I leverage the latest technologies to build robust, scalable, and beautiful applications.
         </p>
       </div>
 
